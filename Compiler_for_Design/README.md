@@ -1,0 +1,35 @@
+# Compiler using python
+
+##BNF
+#### BNF rule for parser
+#### BNF = ```
+#### program = "program", identifier, ";", block, ".";
+#### functions = {"function", identifier, "(", var_dec, ")", ";", block};
+#### block = [functions], ["var", var_dec], [statements];
+#### var_dec = (identifier, {,",", identifier}, ":", type, ";")+
+#### statements = "begin", statement, {";", statement}, "end";
+#### statement = attribution | statements | print | if | while;
+#### attribution = identifier, "=", (expression | read);
+#### print = "print", "(", expression, ")";
+#### read = "read", "(", ")";
+#### if = "if", rel_expression, "then", statement, ["else" statement"];
+#### while = "while", rel_expression, "do", statement;
+#### rel_expression = expression, {comp, expression};
+#### expression = term, { ("+"|"-"|"or"), term, };
+#### term = factor, { ("*" | "/" | "and"), factor };
+#### factor = ("+" | "-" | "not"), (factor | number | boolean | ("(" expression ")") | identifier | func_call);
+#### func_call = identifier, "(", [expression, {",", expression}], ")";
+#### identifier = letter, {letter | digit | "_" };
+#### comp = ">" | "<" | "==" | "!=";
+#### number = digit+;
+#### boolean = "true" | "false";
+#### type = "int" | "boolean";
+#### letter = [a-zA-Z];
+#### digit = [0-9];
+#### ```
+
+##Lexer>>get the list of token
+
+##Parser>>get the syntax tree and generate the bitearrary code
+
+##Simulator>>execute the code using stack
