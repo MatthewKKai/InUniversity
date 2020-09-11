@@ -1,8 +1,8 @@
 # 基于循环神经网络(RNN)的评论情感分类
 
-使用循环神经网络，完成对影评的情感（正面、负面）分类。
+使用循环神经网络，完成对影评的情感（positive、non、negative）分类。
 
-训练使用的数据集为[https://www.cs.cornell.edu/people/pabo/movie-review-data/](https://www.cs.cornell.edu/people/pabo/movie-review-data/)上的[sentence polarity dataset v1.0](https://www.cs.cornell.edu/people/pabo/movie-review-data/rt-polaritydata.tar.gz)，包含正负面评论各5331条。
+训练使用的数据集为，包含正中负面评论各5281条。
 
 由于数据集较小，模型的泛化能力不是很好。
 
@@ -14,15 +14,11 @@
 
 - 测试集 0.80
 
-详情请移步我的博客[使用循环神经网络(RNN)实现影评情感分类](http://blog.csdn.net/aaronjny/article/details/79561115)
-
 -------------------
 
 ## 说明
 
 **1.数据预处理**
-
-数据下载下来之后需要进行解压，得到`rt-polarity.neg`和`rt-polarity.pos`文件，这两个文件是`Windows-1252`编码的，先将它转成`unicode`处理起来会更方便。
 
 数据预处理过程包括：
 
